@@ -1,0 +1,17 @@
+body{
+    background-color:greenyellow;
+}
+.mainFrame{
+    width:650px;
+    height:650px;
+    margin: auto auto;
+}
+.Block{
+    width: 30%;
+    min-width:100px;
+    min-height:100px;
+    height: 30%;
+    background-color:currentColor;
+    margin : 10px;
+    float : left;
+}
