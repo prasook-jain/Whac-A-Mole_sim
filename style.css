@@ -15,3 +15,21 @@ body{
     margin : 10px;
     float : left;
 }
+.footer{
+    min-height: 60px;
+    background-color:darkcyan;
+}
+.fBox{
+    background-color:darkgreen;
+    color:whitesmoke;
+    float:left;
+    width:inherit;
+    height:inherit;
+    margin:10px;
+}
+#replay{
+    background-color:darkred;
+    color:whitesmoke;
+    float:right;
+    margin:10px;
+}

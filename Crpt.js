@@ -42,6 +42,7 @@ var gameSpeed = 2000;  //gamespeed intially
 var block;
 var flag = false;
 var breakTime;
+var count;
 var name = prompt('hey just enter your name ','Prasook Jain');
 
 
@@ -54,6 +55,9 @@ var runV2 = function() {
     */
 	life = 2;
 	score = 0;
+	count = 0;
+	showScore();
+	showLife();
 	runGame();
 }
 
@@ -71,9 +75,15 @@ function updateGame() {
 	if(life<0) {
 		clearTimeout(breakTime);
 	}
-	else if(flag == true) score++;
-	else if(life>=0) life--;
-
+	else if(flag == true) {
+		score++;
+		showScore();
+	}
+	else if(life>=0) {
+		life--;
+		showLife();
+	}
+	if( gameSpeed>1000) gameSpeed -= ++count*10;
 	preBlockId = resetBlock(block);
 }
 
@@ -84,3 +94,12 @@ function clickedBlock(elem){
 function exitFunc(){
 	alert('Hey '+name+'!, Your score is '+score);
 	}
+
+function showScore(){
+	var scoreBlock = document.getElementById('score');
+	scoreBlock.innerHTML = "Score :" + String(score);
+}
+function showLife(){
+	var lifeBlock = document.getElementById('life');
+	lifeBlock.innerHTML = "Lifes :" + String(life);
+}
