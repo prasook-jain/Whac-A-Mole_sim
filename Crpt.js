@@ -21,12 +21,12 @@ function assignBlock(preBlockId) {
 	//restrict from choose same block
 
 	var block = document.getElementById(String(blockId));
-	block.style.backgroundColor = 'red';
+	block.style.backgroundColor = '#E91E63';
 	return block;
 }
 
 function resetBlock(block) {
-	block.style.backgroundColor = 'black';
+	block.style.backgroundColor = '#7D41EB';
 	return parseInt(block.id);
 }
 
@@ -97,9 +97,9 @@ function exitFunc(){
 
 function showScore(){
 	var scoreBlock = document.getElementById('score');
-	scoreBlock.innerHTML = "Score :" + String(score);
+	scoreBlock.innerHTML = "Score : " + String(score);
 }
 function showLife(){
 	var lifeBlock = document.getElementById('life');
-	lifeBlock.innerHTML = "Lifes :" + String(life);
+	lifeBlock.innerHTML = "Lifes : " + String(life+1);
 }

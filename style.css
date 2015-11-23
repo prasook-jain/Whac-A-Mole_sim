@@ -1,35 +1,44 @@
 body{
-    background-color:greenyellow;
+    background-color: lightgray;
+    font-family:monospace;
+    font-size: 1.2em;
 }
+
 .mainFrame{
-    width:650px;
-    height:650px;
+    width:70vh;
+    height:70vh;
     margin: auto auto;
 }
 .Block{
-    width: 30%;
-    min-width:100px;
-    min-height:100px;
-    height: 30%;
-    background-color:currentColor;
-    margin : 10px;
+    width:20vh;
+    height:20vh;
+    background-color: #7D41EB;
+    margin : 1vh;
     float : left;
 }
 .footer{
-    min-height: 60px;
+    height: 5vh;
     background-color:darkcyan;
+    width: 100%;
+    text-align: center;
+
 }
 .fBox{
-    background-color:darkgreen;
     color:whitesmoke;
     float:left;
-    width:inherit;
-    height:inherit;
-    margin:10px;
+    padding: 0.5em;
+    width: 30vw;
 }
 #replay{
-    background-color:darkred;
+    background-color:crimson;
     color:whitesmoke;
-    float:right;
-    margin:10px;
+    float: right;
+    height:100%;
+    width:30vw;
+}
+.Block:active,#replay:active{
+    box-shadow: 0px 0px 0 0;
+}
+.Block,#replay{
+    box-shadow: 0px 0px 30px 0px #575653;
 }
