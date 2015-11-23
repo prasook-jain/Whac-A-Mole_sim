@@ -1,11 +1,13 @@
 body{
     background-color:greenyellow;
 }
+
 .mainFrame{
     width:650px;
     height:650px;
     margin: auto auto;
 }
+
 .Block{
     width: 30%;
     min-width:100px;
@@ -15,10 +17,12 @@ body{
     margin : 10px;
     float : left;
 }
+
 .footer{
     min-height: 60px;
     background-color:darkcyan;
 }
+
 .fBox{
     background-color:darkgreen;
     color:whitesmoke;
@@ -27,9 +31,45 @@ body{
     height:inherit;
     margin:10px;
 }
+
 #replay{
     background-color:darkred;
     color:whitesmoke;
     float:right;
     margin:10px;
+}
+
+#help{
+}
+
+#helpImg{
+    margin:0.2em;
+    position:absolute;
+    right: 5px;
+    top: 5px;
+    width:3em;
+    height:3em;
+}
+
+#helpBox{
+    display:none;
+    position:absolute;
+    background-color:antiquewhite;
+    top:40vh;
+    right:60vh;
+    width:40vw;
+    height:40vh;
+    max-width:60vw;
+    max-height:60vh;
+}
+#h2Help{
+    text-align:center;
+}
+
+.popBox{
+    border-radius : 4vh 16vh;
+    background-image : url('./images/leave.jpg');
+    color:white;
+    font:bold;
+    border : 10vh none white;
 }

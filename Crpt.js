@@ -103,3 +103,7 @@ function showLife(){
 	var lifeBlock = document.getElementById('life');
 	lifeBlock.innerHTML = "Lifes :" + String(life);
 }
+function getHelp(){
+	var helpBox = document.getElementById('helpBox');
+	helpBox.style.display = 'block';
+}
