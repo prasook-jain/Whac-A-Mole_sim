@@ -2,10 +2,14 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src='Crpt.js' type='text/javascript'></script>
   <title>Kepler13</title>
 </head>
 <body onload="runV2()" >
+  <div class="header">
+    <div class="items" id="menubar"> <img alt="Menu" src="./images/menu_w.png" id = "menu_icon"> </div>
+    <div class="items" id="heading"> <h1>Whac-A-Mole</h1> <sub>- By Prasook Jain</sub></div>
+    <div class="items" id="helpIcon"> <img alt="helpButton" src="./images/help_w.png" onclick="getHelp()"> </div>
+  </div>
   <div class="mainFrame" >
     <div class="Block" id="1" onclick="clickedBlock(this)">
     </div>
@@ -26,9 +30,19 @@
     <div class="Block" id="9" onclick="clickedBlock(this)">
     </div>
   </div>
-  <div id="help">
-     <img id="helpImg" src='./images/help.png' onclick="getHelp()">
+  <div class="popBox" id="helpBox">
+     <img src="./images/close_1x.png" alt="close" onclick="closeHelpBox()">
+     <p>It's a simple game , just tap to red color block
+            to score, If you miss it, one life goes down.
+            Enjoy the game :)
+     </p>
+  </div>
+  <!--div id="help">
+     <img id="helpButton" src='./images/help.png' onclick="getHelp()">
      <div class="popBox" id="helpBox">
+       <div id="closeHelp" onclick="closeHelpBox()">
+         <img src="./images/close_1x.png">
+       </div>
         <div>
           <h2 id="h2Help">Help</h2>
         </div>
@@ -40,11 +54,13 @@
           </p>
         </div>
      </div>
-  </div>
+  </div-->
+
   <div class='footer'>
     <div type='button' id='replay' onclick='runV2()'>Click Here to Replay</div>
     <div class='fBox' id='score'></div>
     <div class='fBox' id='life'></div>
   </div>
+  <script src='Crpt.js' type='text/javascript'></script>
 </body>
 </html>

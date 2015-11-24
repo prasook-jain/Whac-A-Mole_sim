@@ -1,50 +1,208 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
 body{
     background-color: lightgray;
-    font-family:monospace;
-    font-size: 1.2em;
+    font-family: monospace;
+}
+.header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    align-items:center;
+    background-color: #00695C;
+
+    min-height:15vh;
+}
+.items{
+    margin: auto 2vh;
+    flex: 0 1 auto;
+}
+#menubar > img, #helpIcon > img{
+    max-width:5vh;
+    max-hight:5vh;
+}
+#menubar > img{
+    -webkit-filter: drop-shadow(0px 0px 3px whitesmoke);
+    -moz-filter: drop-shadow(0px 0px 3px whitesmoke)
+    filter : drop-shadow(0 0 3px whitesmoke);
+}
+#helpIcon > img{
+    -webkit-filter: drop-shadow(0 0 2px lightgray);
+    -moz-filter: drop-shadow(0px 0px 2px lightgray)
+    filter : drop-shadow(0 0 2px lightgray);
+}
+#heading{
+    text-align:center;
+    font-size:4vh;
+    color: whitesmoke;
+}
+#heading sub{
+    position:relative;
+    float:right;
+    font-size:2vh;
+    right: -10vh;
 }
 
 .mainFrame{
-    width:70vh;
-    height:70vh;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:space-around;
+    align-items:center;
+    align-content:center;
+}
+.popBox{
+    border-radius: 2px 4px 2px 10px;
+    position:absolute;
+    display:none;
+    background-color: rgba(92,199,40,0.9);
+    box-shadow: 1vh 1vh 5vh 1vh #232924;
+    color : whitesmoke;
     margin: auto auto;
+    z-index: 2;
+    left:0;
+    right:0;
+    top:40vh;
+}
+.popBox > img{
+    position:relative;
+    background-color: Gary;
+    float:right;
+}
+.popBox > p{
+    font-size:large;
+    padding:2vw;
+}
+@media (orientation:portrait){
+    .Block{
+        width:30vw;
+        height:30vw;
+        margin:1vw;
+    }
+    .mainFrame{
+        width:100vw;
+        height:100vw;
+        margin: 1vh auto;
+    }
+    #heading{
+        font-size:4vw;
+    }
+    #heading sub{
+        font-size:2vw;
+        right: -10vw;
+    }
+    .footer{
+        min-height:10vh;
+    }
+    .fBox{
+        padding: 0.5em;
+        font-size:4vw;
+    }
+    #replay{
+        height:80%;
+        font-size:4vw;
+        padding: 2vw;
+    }
+    .popBox{
+        border: inset 1vw solid transparent;
+        width: 60vw;
+        min-height:15vh;
+        overflow:auto;
+    }
+    .popBox > img {
+        padding : 1vw;
+        width: 3vw;
+        hight: 3vw;
+    }
 }
 
+@media (orientation:landscape){
+    .Block{
+        width:20vh;
+        height:20vh;
+        margin:1vh;
+    }
+    .mainFrame{
+        width:70vh;
+        height:70vh;
+        margin: 1vw auto;
+    }
+    #heading{
+        font-size:4vh;
+    }
+    #heading sub{
+        font-size:2vh;
+        right: -10vh;
+    }
+    .footer{
+        min-height:10vh;
+    }
+    .fBox{
+        padding: 0.5em;
+        font-size:4vh;
+    }
+    #replay{
+        height:90%;
+        padding:1vh;
+        font-size:4vh;
+    }
+    .popBox{
+        border: inset 1vh solid transparent;
+        width: 35vw;
+        min-height:15vh;
+        overflow:auto;
+    }
+    .popBox > img {
+        padding : 1vh;
+        width: 5vh;
+        hight: 5vh;
+        max-width:50px;
+        max-hight:50px;
+    }
+
+}
 .Block{
-    width:20vh;
-    height:20vh;
     background-color: #7D41EB;
-    margin : 1vh;
     float : left;
 }
-
 .footer{
-    height: 5vh;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:space-around;
+    align-items:center;
+
+    position:absolute;
+    bottom: 0px;
     background-color:darkcyan;
     width: 100%;
     text-align: center;
-
 }
-
 .fBox{
+    flex: 0 1 auto;
     color:whitesmoke;
     float:left;
-    padding: 0.5em;
-    width: 30vw;
 }
-
 #replay{
+    flex: 0 1 auto;
     background-color:crimson;
     color:whitesmoke;
     float: right;
-    height:100%;
-    width:30vw;
 }
-
+/*
 #help{
 }
-
-#helpImg{
+/*
+#closeHelp:active>#helpBox{
+    display: none;
+}
+#closeHelp{
+    float:right;
+    top:0px;
+    position: relative;
+    margin: 0 0 10px 10px;
+}
+#helpButton{
     margin:0.2em;
     position:absolute;
     right: 5px;
@@ -52,33 +210,38 @@ body{
     width:3em;
     height:3em;
 }
+/*#helpButton:active > #helpBox{
+    display: block;
+}
 
 #helpBox{
     display:none;
     position:absolute;
     background-color:antiquewhite;
-    top:40vh;
-    right:60vh;
+    vertical-align: middle;
+    margin: auto;
     width:40vw;
     height:40vh;
-    max-width:60vw;
-    max-height:60vh;
 }
 #h2Help{
     text-align:center;
 }
 
 .popBox{
-    border-radius : 4vh 16vh;
+    border-radius : 4vh 5vh 4vh 16vh;
     background-image : url('./images/leave.jpg');
     color:white;
     font:bold;
-    border : 10vh none white;
+    border : inset 2vh solid transparent;
+    background-color: rgba(12, 12, 12, 0.5);
 }
-
-.Block:active,#replay:active{
-    box-shadow: 0px 0px 0 0;
+*/
+.Block:active, #replay:active, #helpIcon > img, #menu_icon{
+    box-shadow: 0px 0px 0px 0;
 }
 .Block,#replay{
     box-shadow: 0px 0px 30px 0px #575653;
+}
+.header{
+    box-shadow: 2px 2px 2px Gray; /*On the bottom edge*/
 }

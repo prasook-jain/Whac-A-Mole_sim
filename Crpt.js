@@ -44,6 +44,7 @@ var flag = false;
 var breakTime;
 var count;
 var name = prompt('hey just enter your name ','Prasook Jain');
+var isGameRun = false;
 
 
 var runV2 = function() {
@@ -56,9 +57,13 @@ var runV2 = function() {
 	life = 2;
 	score = 0;
 	count = 0;
-	showScore();
-	showLife();
-	runGame();
+	gameSpeed = 2000;
+	if(isGameRun == false){
+		isGameRun = true;
+		showScore();
+		showLife();
+		runGame();
+	}
 }
 
 function runGame() {
@@ -92,6 +97,7 @@ function clickedBlock(elem){
 }
 
 function exitFunc(){
+	isGameRun = false;
 	alert('Hey '+name+'!, Your score is '+score);
 	}
 
@@ -99,11 +105,25 @@ function showScore(){
 	var scoreBlock = document.getElementById('score');
 	scoreBlock.innerHTML = "Score : " + String(score);
 }
+
 function showLife(){
 	var lifeBlock = document.getElementById('life');
 	lifeBlock.innerHTML = "Lifes :" + String(life+1);
+	lifeBlock.style.background = "red";
+	alertLife(lifeBlock);
+	lifeBlock.style.background = "transparent";
+}
+/*Add the alterLife function so that it can see the transaction*/
+function alertLife(lifeBlock){
+	lifeBlock.style.WebkitTransition = "background 0.5s linear 0s";
+	lifeBlock.style.transition = "background 0.5s linear 0s";
 }
 function getHelp(){
 	var helpBox = document.getElementById('helpBox');
 	helpBox.style.display = 'block';
+}
+
+function closeHelpBox(){
+	var helpBox = document.getElementById('helpBox');
+	helpBox.style.display = 'none';
 }
